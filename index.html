@@ -9,9 +9,9 @@ layout: default
 
 <div class="container">
   <ul>
-    {% for post in site.posts %}
+    {% for post in site.posts limit:5 %}
       <li>
-        <h3>{{post.title}}</h3>
+        <h3><a href="{{site.baseurl}}{{post.url}}">{{post.title}} <small>Posted on {{post.date}}</small></a></h3>
         <p>
           <small>{{post.meta}}</small>
         </p>
