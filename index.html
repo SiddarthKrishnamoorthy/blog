@@ -8,14 +8,17 @@ layout: default
 <hr>
 
 <div class="container">
-  <ul>
+  <div class="panel-group">
     {% for post in site.posts limit:5 %}
-      <li>
-        <h3><a href="{{site.baseurl}}{{post.url}}">{{post.title}} <small>Posted on {{post.date}}</small></a></h3>
-        <p>
-          <small>{{post.meta}}</small>
-        </p>
-      </li>
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title"><a href="{{site.baseurl}}{{post.url}}">{{post.title}}</a> <small>Posted on {{post.date}}</small></h3>
+          </div>
+
+          <div class="panel-body">
+            {{post.meta}}
+          </div>
+        </div>
     {% endfor %}
-  </ul>
+  </div>
 </div>
